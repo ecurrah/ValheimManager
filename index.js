@@ -166,11 +166,13 @@ function validateConfiguration(config) {
         if (config.logging.fileCount < 0) errors.push('The logging file max count should be more than 0.');
     }
     if (config.discord.token != '') {
+        let discordIdMinLength = 17;
+        let discordIdMaxLength = 19;
         if (config.discord.token.length < 20) errors.push('The discord token should be longer.');
-        if (config.discord.serverId.length != 18) errors.push('The discord server id should be 18 characters long.');
-        if (config.discord.adminRoleId.length != 18) errors.push('The discord admin role id should be 18 characters long.');
-        if (config.discord.serverLogChannel.length != 18) errors.push('The discord server log channel id should be 18 characters long.');
-        if (config.discord.commandLogChannel.length != 18) errors.push('The discord command log channel id should be 18 characters long.');
+        if (config.discord.serverId.length < discordIdMinLength || config.discord.serverId.length > discordIdMaxLength) errors.push(`The discord server id should be between ${discordIdMinLength} and ${discordIdMaxLength} characters long (inclusive).`);
+        if (config.discord.adminRoleId.length < discordIdMinLength || config.discord.serverId.length > discordIdMaxLength) errors.push(`The discord admin role id should be between ${discordIdMinLength} and ${discordIdMaxLength} characters long (inclusive).`);
+        if (config.discord.serverLogChannel.length < discordIdMinLength || config.discord.serverId.length > discordIdMaxLength) errors.push(`The discord server log channel id should be between ${discordIdMinLength} and ${discordIdMaxLength} characters long (inclusive).`);
+        if (config.discord.commandLogChannel.length < discordIdMinLength || config.discord.commandLogChannel > discordIdMaxLength) errors.push(`The discord command log channel id should be between ${discordIdMinLength} and ${discordIdMaxLength} characters long (inclusive).`);
     }
 
     if (errors.length > 0) return errors.join('\n');
