@@ -215,16 +215,16 @@ async function setupConfig() {
             if (answer.length < 20) return 'The discord login token is expected to be much longer.';
         });
         serverId = await prompt('What is your discord servers id?', answer => {
-            if (answer.length < discordIdMinLength || answer.length > discordIdMaxLength) return 'A discord id is expected to be between 17 and 19 characters long (inclusive).';
+            if (answer.length < discordIdMinLength || answer.length > discordIdMaxLength) return `A discord id is expected to be between ${discordIdMinLength} and ${discordIdMaxLength} characters long (inclusive).`;
         });
         adminRoleId = await prompt('What is the id of your servers admin/mod role?', answer => {
-            if (answer.length < discordIdMinLength || answer.length > discordIdMaxLength) return 'A discord id is expected to be between 17 and 19 characters long (inclusive).';
+            if (answer.length < discordIdMinLength || answer.length > discordIdMaxLength) return `A discord id is expected to be between ${discordIdMinLength} and ${discordIdMaxLength} characters long (inclusive).`;
         });
         serverLogChannel = await prompt('What is the id of the channel you would like to use for server logs?', answer => {
-            if (answer.length < discordIdMinLength || answer.length > discordIdMaxLength) return 'A discord id is expected to be between 17 and 19 characters long (inclusive).';
+            if (answer.length < discordIdMinLength || answer.length > discordIdMaxLength) return `A discord id is expected to be between ${discordIdMinLength} and ${discordIdMaxLength} characters long (inclusive).`;
         });
         commandLogChannel = await prompt('What is the id of the channel you would like to use for logging commands?', answer => {
-            if (answer.length < discordIdMinLength || answer.length > discordIdMaxLength) return 'A discord id is expected to be between 17 and 19 characters long (inclusive).';
+            if (answer.length < discordIdMinLength || answer.length > discordIdMaxLength) return `A discord id is expected to be between ${discordIdMinLength} and ${discordIdMaxLength} characters long (inclusive).`;
         });
     }
 

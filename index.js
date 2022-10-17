@@ -172,7 +172,7 @@ function validateConfiguration(config) {
         if (config.discord.serverId.length < discordIdMinLength || config.discord.serverId.length > discordIdMaxLength) errors.push(`The discord server id should be between ${discordIdMinLength} and ${discordIdMaxLength} characters long (inclusive).`);
         if (config.discord.adminRoleId.length < discordIdMinLength || config.discord.serverId.length > discordIdMaxLength) errors.push(`The discord admin role id should be between ${discordIdMinLength} and ${discordIdMaxLength} characters long (inclusive).`);
         if (config.discord.serverLogChannel.length < discordIdMinLength || config.discord.serverId.length > discordIdMaxLength) errors.push(`The discord server log channel id should be between ${discordIdMinLength} and ${discordIdMaxLength} characters long (inclusive).`);
-        if (config.discord.commandLogChannel.length < discordIdMinLength || config.discord.commandLogChannel > discordIdMaxLength) errors.push(`The discord command log channel id should be between ${discordIdMinLength} and ${discordIdMaxLength} characters long (inclusive).`);
+        if (config.discord.commandLogChannel.length < discordIdMinLength || config.discord.commandLogChannel.length > discordIdMaxLength) errors.push(`The discord command log channel id should be between ${discordIdMinLength} and ${discordIdMaxLength} characters long (inclusive).`);
     }
 
     if (errors.length > 0) return errors.join('\n');
