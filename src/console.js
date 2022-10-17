@@ -207,22 +207,24 @@ async function setupConfig() {
     });
     let token, serverId, adminRoleId, serverLogChannel, commandLogChannel;
     if (discordSetup.toLowerCase().startsWith('y')) {
+        let discordIdMinLength = 17;
+        let discordIdMaxLength = 19;
         const instructions = `https://github.com/chegele/ValheimManager/blob/master/README.md#discord-bot`;
         console.log(`\n Follow the instructions below for help with this portion of the setup.\n${instructions}`);
         token = await prompt('What is your bots login token?', answer => {
             if (answer.length < 20) return 'The discord login token is expected to be much longer.';
         });
         serverId = await prompt('What is your discord servers id?', answer => {
-            if (answer.length != 18) return 'A discord id is expected to be 18 characters long.';
+            if (answer.length < discordIdMinLength || answer.length > discordIdMaxLength) return 'A discord id is expected to be between 17 and 19 characters long (inclusive).';
         });
         adminRoleId = await prompt('What is the id of your servers admin/mod role?', answer => {
-            if (answer.length != 18) return 'A discord id is expected to be 18 characters long.';
+            if (answer.length < discordIdMinLength || answer.length > discordIdMaxLength) return 'A discord id is expected to be between 17 and 19 characters long (inclusive).';
         });
         serverLogChannel = await prompt('What is the id of the channel you would like to use for server logs?', answer => {
-            if (answer.length != 18) return 'A discord id is expected to be 18 characters long.';
+            if (answer.length < discordIdMinLength || answer.length > discordIdMaxLength) return 'A discord id is expected to be between 17 and 19 characters long (inclusive).';
         });
         commandLogChannel = await prompt('What is the id of the channel you would like to use for logging commands?', answer => {
-            if (answer.length != 18) return 'A discord id is expected to be 18 characters long.';
+            if (answer.length < discordIdMinLength || answer.length > discordIdMaxLength) return 'A discord id is expected to be between 17 and 19 characters long (inclusive).';
         });
     }
 
