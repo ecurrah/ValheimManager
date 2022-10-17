@@ -1,6 +1,6 @@
 {
   "name": "@ecurrah/valheim-manager",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A fork of the valheim-manager node.js application for managing valheim dedicated servers. ",
   "main": "index.js",
   "bin": {
